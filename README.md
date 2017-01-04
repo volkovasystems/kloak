@@ -1,0 +1,2 @@
+# kloak
+Pretend delegated function.
