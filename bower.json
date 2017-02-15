@@ -1,8 +1,9 @@
 {
   "name": "kloak",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Pretend delegated function.",
   "main": "kloak.deploy.js",
+  "support": "kloak.support.js",
   "authors": [
     "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
     "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
@@ -23,13 +24,13 @@
     "tests"
   ],
   "dependencies": {
-    "ate": "^0.9.0",
-    "cobralize": "^0.7.0",
-    "falzy": "^0.11.0",
-    "harden": "^0.14.0",
-    "kein": "^0.9.0",
-    "protype": "^0.15.0",
-    "transpher": "^0.6.0",
-    "truly": "^0.11.0"
+    "ate": "^0.10.0",
+    "cobralize": "^0.8.0",
+    "falzy": "^0.13.0",
+    "harden": "^0.16.0",
+    "kein": "^0.10.0",
+    "protype": "^0.17.0",
+    "transpher": "^0.7.0",
+    "truly": "^0.13.0"
   }
 }
