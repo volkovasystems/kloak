@@ -1,68 +1,68 @@
 "use strict";
 
 /*;
-	@module-license:
-		The MIT License (MIT)
-		@mit-license
-
-		Copyright (@c) 2017 Richeve Siodina Bebedor
-		@email: richeve.bebedor@gmail.com
-
-		Permission is hereby granted, free of charge, to any person obtaining a copy
-		of this software and associated documentation files (the "Software"), to deal
-		in the Software without restriction, including without limitation the rights
-		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-		copies of the Software, and to permit persons to whom the Software is
-		furnished to do so, subject to the following conditions:
-
-		The above copyright notice and this permission notice shall be included in all
-		copies or substantial portions of the Software.
-
-		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-		SOFTWARE.
-	@end-module-license
-
-	@module-configuration:
-		{
-			"package": "kloak",
-			"path": "kloak/kloak.js",
-			"file": "kloak.js",
-			"module": "kloak",
-			"author": "Richeve S. Bebedor",
-			"contributors": [
-				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
-			],
-			"eMail": "richeve.bebedor@gmail.com",
-			"repository": "https://github.com/volkovasystems/kloak.git",
-			"test": "kloak-test.js",
-			"global": true
-		}
-	@end-module-configuration
-
-	@module-documentation:
-		Pretend delegated function.
-
-		This will not cloak delegate with method linked to it.
-	@end-module-documentation
-
-	@include:
-		{
-			"ate": "ate",
-			"cobralize": "cobralize",
-			"falzy": "falzy",
-			"harden": "harden",
-			"kein": "kein",
-			"protype": "protype",
-			"transpher": "transpher",
-			"truly": "truly"
-		}
-	@end-include
-*/
+              	@module-license:
+              		The MIT License (MIT)
+              		@mit-license
+              
+              		Copyright (@c) 2017 Richeve Siodina Bebedor
+              		@email: richeve.bebedor@gmail.com
+              
+              		Permission is hereby granted, free of charge, to any person obtaining a copy
+              		of this software and associated documentation files (the "Software"), to deal
+              		in the Software without restriction, including without limitation the rights
+              		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+              		copies of the Software, and to permit persons to whom the Software is
+              		furnished to do so, subject to the following conditions:
+              
+              		The above copyright notice and this permission notice shall be included in all
+              		copies or substantial portions of the Software.
+              
+              		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+              		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+              		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+              		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+              		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+              		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+              		SOFTWARE.
+              	@end-module-license
+              
+              	@module-configuration:
+              		{
+              			"package": "kloak",
+              			"path": "kloak/kloak.js",
+              			"file": "kloak.js",
+              			"module": "kloak",
+              			"author": "Richeve S. Bebedor",
+              			"contributors": [
+              				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+              			],
+              			"eMail": "richeve.bebedor@gmail.com",
+              			"repository": "https://github.com/volkovasystems/kloak.git",
+              			"test": "kloak-test.js",
+              			"global": true
+              		}
+              	@end-module-configuration
+              
+              	@module-documentation:
+              		Pretend delegated function.
+              
+              		This will not cloak delegate with method linked to it.
+              	@end-module-documentation
+              
+              	@include:
+              		{
+              			"ate": "ate",
+              			"cobralize": "cobralize",
+              			"falzy": "falzy",
+              			"harden": "harden",
+              			"kein": "kein",
+              			"protype": "protype",
+              			"transpher": "transpher",
+              			"truly": "truly"
+              		}
+              	@end-include
+              */
 
 var ate = require("ate");
 var cobralize = require("cobralize");
@@ -75,15 +75,15 @@ var truly = require("truly");
 
 var kloak = function kloak(target, delegate, stamp, name) {
 	/*;
- 	@meta-configuration:
- 		{
- 			"target:required": "function",
- 			"delegate:required": "function",
- 			"stamp:required": "string",
- 			"name": "string"
- 		}
- 	@end-meta-configuration
- */
+                                                           	@meta-configuration:
+                                                           		{
+                                                           			"target:required": "function",
+                                                           			"delegate:required": "function",
+                                                           			"stamp:required": "string",
+                                                           			"name": "string"
+                                                           		}
+                                                           	@end-meta-configuration
+                                                           */
 
 	if (!protype(target, FUNCTION)) {
 		throw new Error("invalid target function");
@@ -117,4 +117,5 @@ var kloak = function kloak(target, delegate, stamp, name) {
 };
 
 module.exports = kloak;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImtsb2FrLmpzIl0sIm5hbWVzIjpbImF0ZSIsInJlcXVpcmUiLCJjb2JyYWxpemUiLCJmYWx6eSIsImhhcmRlbiIsImtlaW4iLCJwcm90eXBlIiwidHJhbnNwaGVyIiwidHJ1bHkiLCJrbG9hayIsInRhcmdldCIsImRlbGVnYXRlIiwic3RhbXAiLCJuYW1lIiwiRlVOQ1RJT04iLCJFcnJvciIsIlNUUklORyIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUVBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBZ0VBLElBQU1BLE1BQU1DLFFBQVMsS0FBVCxDQUFaO0FBQ0EsSUFBTUMsWUFBWUQsUUFBUyxXQUFULENBQWxCO0FBQ0EsSUFBTUUsUUFBUUYsUUFBUyxPQUFULENBQWQ7QUFDQSxJQUFNRyxTQUFTSCxRQUFTLFFBQVQsQ0FBZjtBQUNBLElBQU1JLE9BQU9KLFFBQVMsTUFBVCxDQUFiO0FBQ0EsSUFBTUssVUFBVUwsUUFBUyxTQUFULENBQWhCO0FBQ0EsSUFBTU0sWUFBWU4sUUFBUyxXQUFULENBQWxCO0FBQ0EsSUFBTU8sUUFBUVAsUUFBUyxPQUFULENBQWQ7O0FBRUEsSUFBTVEsUUFBUSxTQUFTQSxLQUFULENBQWdCQyxNQUFoQixFQUF3QkMsUUFBeEIsRUFBa0NDLEtBQWxDLEVBQXlDQyxJQUF6QyxFQUErQztBQUM1RDs7Ozs7Ozs7Ozs7QUFXQSxLQUFJLENBQUNQLFFBQVNJLE1BQVQsRUFBaUJJLFFBQWpCLENBQUwsRUFBa0M7QUFDakMsUUFBTSxJQUFJQyxLQUFKLENBQVcseUJBQVgsQ0FBTjtBQUNBOztBQUVELEtBQUksQ0FBQ1QsUUFBU0ssUUFBVCxFQUFtQkcsUUFBbkIsQ0FBTCxFQUFvQztBQUNuQyxRQUFNLElBQUlDLEtBQUosQ0FBVywyQkFBWCxDQUFOO0FBQ0E7O0FBRUQsS0FBSSxDQUFDVCxRQUFTTSxLQUFULEVBQWdCSSxNQUFoQixDQUFELElBQTZCYixNQUFPUyxLQUFQLENBQWpDLEVBQWlEO0FBQ2hELFFBQU0sSUFBSUcsS0FBSixDQUFXLGVBQVgsQ0FBTjtBQUNBOztBQUVELEtBQUlQLE1BQU9LLElBQVAsS0FBaUIsQ0FBQ1AsUUFBU08sSUFBVCxFQUFlRyxNQUFmLENBQXRCLEVBQStDO0FBQzlDLFFBQU0sSUFBSUQsS0FBSixDQUFXLGNBQVgsQ0FBTjtBQUNBOztBQUVELEtBQUlWLEtBQU1NLFFBQU4sRUFBZ0IsUUFBaEIsQ0FBSixFQUFnQztBQUMvQixRQUFNLElBQUlJLEtBQUosQ0FBVyw4QkFBWCxDQUFOO0FBQ0E7O0FBRURSLFdBQVdHLE1BQVgsRUFBbUJDLFFBQW5COztBQUVBWCxLQUFLLE1BQUwsRUFBYVUsT0FBT0csSUFBUCxJQUFlQSxJQUE1QixFQUFrQ0YsUUFBbEM7O0FBRUFQLFFBQVEsUUFBUixFQUFrQk0sTUFBbEIsRUFBMEJDLFFBQTFCOztBQUVBUCxRQUFRRixVQUFXVSxLQUFYLENBQVIsRUFBNEJBLEtBQTVCLEVBQW1DRCxRQUFuQzs7QUFFQSxRQUFPQSxRQUFQO0FBQ0EsQ0F6Q0Q7O0FBMkNBTSxPQUFPQyxPQUFQLEdBQWlCVCxLQUFqQiIsImZpbGUiOiJrbG9hay5qcyIsInNvdXJjZXNDb250ZW50IjpbIlwidXNlIHN0cmljdFwiO1xuXG4vKjtcblx0QG1vZHVsZS1saWNlbnNlOlxuXHRcdFRoZSBNSVQgTGljZW5zZSAoTUlUKVxuXHRcdEBtaXQtbGljZW5zZVxuXG5cdFx0Q29weXJpZ2h0IChAYykgMjAxNyBSaWNoZXZlIFNpb2RpbmEgQmViZWRvclxuXHRcdEBlbWFpbDogcmljaGV2ZS5iZWJlZG9yQGdtYWlsLmNvbVxuXG5cdFx0UGVybWlzc2lvbiBpcyBoZXJlYnkgZ3JhbnRlZCwgZnJlZSBvZiBjaGFyZ2UsIHRvIGFueSBwZXJzb24gb2J0YWluaW5nIGEgY29weVxuXHRcdG9mIHRoaXMgc29mdHdhcmUgYW5kIGFzc29jaWF0ZWQgZG9jdW1lbnRhdGlvbiBmaWxlcyAodGhlIFwiU29mdHdhcmVcIiksIHRvIGRlYWxcblx0XHRpbiB0aGUgU29mdHdhcmUgd2l0aG91dCByZXN0cmljdGlvbiwgaW5jbHVkaW5nIHdpdGhvdXQgbGltaXRhdGlvbiB0aGUgcmlnaHRzXG5cdFx0dG8gdXNlLCBjb3B5LCBtb2RpZnksIG1lcmdlLCBwdWJsaXNoLCBkaXN0cmlidXRlLCBzdWJsaWNlbnNlLCBhbmQvb3Igc2VsbFxuXHRcdGNvcGllcyBvZiB0aGUgU29mdHdhcmUsIGFuZCB0byBwZXJtaXQgcGVyc29ucyB0byB3aG9tIHRoZSBTb2Z0d2FyZSBpc1xuXHRcdGZ1cm5pc2hlZCB0byBkbyBzbywgc3ViamVjdCB0byB0aGUgZm9sbG93aW5nIGNvbmRpdGlvbnM6XG5cblx0XHRUaGUgYWJvdmUgY29weXJpZ2h0IG5vdGljZSBhbmQgdGhpcyBwZXJtaXNzaW9uIG5vdGljZSBzaGFsbCBiZSBpbmNsdWRlZCBpbiBhbGxcblx0XHRjb3BpZXMgb3Igc3Vic3RhbnRpYWwgcG9ydGlvbnMgb2YgdGhlIFNvZnR3YXJlLlxuXG5cdFx0VEhFIFNPRlRXQVJFIElTIFBST1ZJREVEIFwiQVMgSVNcIiwgV0lUSE9VVCBXQVJSQU5UWSBPRiBBTlkgS0lORCwgRVhQUkVTUyBPUlxuXHRcdElNUExJRUQsIElOQ0xVRElORyBCVVQgTk9UIExJTUlURUQgVE8gVEhFIFdBUlJBTlRJRVMgT0YgTUVSQ0hBTlRBQklMSVRZLFxuXHRcdEZJVE5FU1MgRk9SIEEgUEFSVElDVUxBUiBQVVJQT1NFIEFORCBOT05JTkZSSU5HRU1FTlQuIElOIE5PIEVWRU5UIFNIQUxMIFRIRVxuXHRcdEFVVEhPUlMgT1IgQ09QWVJJR0hUIEhPTERFUlMgQkUgTElBQkxFIEZPUiBBTlkgQ0xBSU0sIERBTUFHRVMgT1IgT1RIRVJcblx0XHRMSUFCSUxJVFksIFdIRVRIRVIgSU4gQU4gQUNUSU9OIE9GIENPTlRSQUNULCBUT1JUIE9SIE9USEVSV0lTRSwgQVJJU0lORyBGUk9NLFxuXHRcdE9VVCBPRiBPUiBJTiBDT05ORUNUSU9OIFdJVEggVEhFIFNPRlRXQVJFIE9SIFRIRSBVU0UgT1IgT1RIRVIgREVBTElOR1MgSU4gVEhFXG5cdFx0U09GVFdBUkUuXG5cdEBlbmQtbW9kdWxlLWxpY2Vuc2VcblxuXHRAbW9kdWxlLWNvbmZpZ3VyYXRpb246XG5cdFx0e1xuXHRcdFx0XCJwYWNrYWdlXCI6IFwia2xvYWtcIixcblx0XHRcdFwicGF0aFwiOiBcImtsb2FrL2tsb2FrLmpzXCIsXG5cdFx0XHRcImZpbGVcIjogXCJrbG9hay5qc1wiLFxuXHRcdFx0XCJtb2R1bGVcIjogXCJrbG9ha1wiLFxuXHRcdFx0XCJhdXRob3JcIjogXCJSaWNoZXZlIFMuIEJlYmVkb3JcIixcblx0XHRcdFwiY29udHJpYnV0b3JzXCI6IFtcblx0XHRcdFx0XCJKb2huIExlbm9uIE1hZ2hhbm95IDxqb2hubGVub25tYWdoYW5veUBnbWFpbC5jb20+XCJcblx0XHRcdF0sXG5cdFx0XHRcImVNYWlsXCI6IFwicmljaGV2ZS5iZWJlZG9yQGdtYWlsLmNvbVwiLFxuXHRcdFx0XCJyZXBvc2l0b3J5XCI6IFwiaHR0cHM6Ly9naXRodWIuY29tL3ZvbGtvdmFzeXN0ZW1zL2tsb2FrLmdpdFwiLFxuXHRcdFx0XCJ0ZXN0XCI6IFwia2xvYWstdGVzdC5qc1wiLFxuXHRcdFx0XCJnbG9iYWxcIjogdHJ1ZVxuXHRcdH1cblx0QGVuZC1tb2R1bGUtY29uZmlndXJhdGlvblxuXG5cdEBtb2R1bGUtZG9jdW1lbnRhdGlvbjpcblx0XHRQcmV0ZW5kIGRlbGVnYXRlZCBmdW5jdGlvbi5cblxuXHRcdFRoaXMgd2lsbCBub3QgY2xvYWsgZGVsZWdhdGUgd2l0aCBtZXRob2QgbGlua2VkIHRvIGl0LlxuXHRAZW5kLW1vZHVsZS1kb2N1bWVudGF0aW9uXG5cblx0QGluY2x1ZGU6XG5cdFx0e1xuXHRcdFx0XCJhdGVcIjogXCJhdGVcIixcblx0XHRcdFwiY29icmFsaXplXCI6IFwiY29icmFsaXplXCIsXG5cdFx0XHRcImZhbHp5XCI6IFwiZmFsenlcIixcblx0XHRcdFwiaGFyZGVuXCI6IFwiaGFyZGVuXCIsXG5cdFx0XHRcImtlaW5cIjogXCJrZWluXCIsXG5cdFx0XHRcInByb3R5cGVcIjogXCJwcm90eXBlXCIsXG5cdFx0XHRcInRyYW5zcGhlclwiOiBcInRyYW5zcGhlclwiLFxuXHRcdFx0XCJ0cnVseVwiOiBcInRydWx5XCJcblx0XHR9XG5cdEBlbmQtaW5jbHVkZVxuKi9cblxuY29uc3QgYXRlID0gcmVxdWlyZSggXCJhdGVcIiApO1xuY29uc3QgY29icmFsaXplID0gcmVxdWlyZSggXCJjb2JyYWxpemVcIiApO1xuY29uc3QgZmFsenkgPSByZXF1aXJlKCBcImZhbHp5XCIgKTtcbmNvbnN0IGhhcmRlbiA9IHJlcXVpcmUoIFwiaGFyZGVuXCIgKTtcbmNvbnN0IGtlaW4gPSByZXF1aXJlKCBcImtlaW5cIiApO1xuY29uc3QgcHJvdHlwZSA9IHJlcXVpcmUoIFwicHJvdHlwZVwiICk7XG5jb25zdCB0cmFuc3BoZXIgPSByZXF1aXJlKCBcInRyYW5zcGhlclwiICk7XG5jb25zdCB0cnVseSA9IHJlcXVpcmUoIFwidHJ1bHlcIiApO1xuXG5jb25zdCBrbG9hayA9IGZ1bmN0aW9uIGtsb2FrKCB0YXJnZXQsIGRlbGVnYXRlLCBzdGFtcCwgbmFtZSApe1xuXHQvKjtcblx0XHRAbWV0YS1jb25maWd1cmF0aW9uOlxuXHRcdFx0e1xuXHRcdFx0XHRcInRhcmdldDpyZXF1aXJlZFwiOiBcImZ1bmN0aW9uXCIsXG5cdFx0XHRcdFwiZGVsZWdhdGU6cmVxdWlyZWRcIjogXCJmdW5jdGlvblwiLFxuXHRcdFx0XHRcInN0YW1wOnJlcXVpcmVkXCI6IFwic3RyaW5nXCIsXG5cdFx0XHRcdFwibmFtZVwiOiBcInN0cmluZ1wiXG5cdFx0XHR9XG5cdFx0QGVuZC1tZXRhLWNvbmZpZ3VyYXRpb25cblx0Ki9cblxuXHRpZiggIXByb3R5cGUoIHRhcmdldCwgRlVOQ1RJT04gKSApe1xuXHRcdHRocm93IG5ldyBFcnJvciggXCJpbnZhbGlkIHRhcmdldCBmdW5jdGlvblwiICk7XG5cdH1cblxuXHRpZiggIXByb3R5cGUoIGRlbGVnYXRlLCBGVU5DVElPTiApICl7XG5cdFx0dGhyb3cgbmV3IEVycm9yKCBcImludmFsaWQgZGVsZWdhdGUgZnVuY3Rpb25cIiApO1xuXHR9XG5cblx0aWYoICFwcm90eXBlKCBzdGFtcCwgU1RSSU5HICkgfHwgZmFsenkoIHN0YW1wICkgKXtcblx0XHR0aHJvdyBuZXcgRXJyb3IoIFwiaW52YWxpZCBzdGFtcFwiICk7XG5cdH1cblxuXHRpZiggdHJ1bHkoIG5hbWUgKSAmJiAhcHJvdHlwZSggbmFtZSwgU1RSSU5HICkgKXtcblx0XHR0aHJvdyBuZXcgRXJyb3IoIFwiaW52YWxpZCBuYW1lXCIgKTtcblx0fVxuXG5cdGlmKCBrZWluKCBkZWxlZ2F0ZSwgXCJtZXRob2RcIiApICl7XG5cdFx0dGhyb3cgbmV3IEVycm9yKCBcImNhbm5vdCBjbG9hayB0YXJnZXQgZGVsZWdhdGVcIiApO1xuXHR9XG5cblx0dHJhbnNwaGVyKCB0YXJnZXQsIGRlbGVnYXRlICk7XG5cblx0YXRlKCBcIm5hbWVcIiwgdGFyZ2V0Lm5hbWUgfHwgbmFtZSwgZGVsZWdhdGUgKTtcblxuXHRoYXJkZW4oIFwibWV0aG9kXCIsIHRhcmdldCwgZGVsZWdhdGUgKTtcblxuXHRoYXJkZW4oIGNvYnJhbGl6ZSggc3RhbXAgKSwgc3RhbXAsIGRlbGVnYXRlICk7XG5cblx0cmV0dXJuIGRlbGVnYXRlO1xufTtcblxubW9kdWxlLmV4cG9ydHMgPSBrbG9haztcbiJdfQ==
+
+//# sourceMappingURL=kloak.support.js.map
