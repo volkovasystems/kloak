@@ -26,4 +26,5 @@ kein \
 protype \
 transpher \
 truly \
---save
+--save \
+--force-latest
