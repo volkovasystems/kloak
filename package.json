@@ -1,6 +1,6 @@
 {
   "name": "kloak",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Pretend delegated function.",
   "main": "kloak.js",
   "support": "kloak.support.js",
@@ -30,14 +30,14 @@
   },
   "homepage": "https://github.com/volkovasystems/kloak#readme",
   "dependencies": {
-    "ate": "^0.10.0",
+    "ate": "^0.11.0",
     "babel-runtime": "^6.23.0",
     "cobralize": "^0.8.0",
     "falzy": "^0.13.0",
     "harden": "^0.16.0",
     "kein": "^0.10.0",
     "protype": "^0.17.0",
-    "transpher": "^0.9.0",
+    "transpher": "^0.10.0",
     "truly": "^0.13.0"
   },
   "devDependencies": {
