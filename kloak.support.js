@@ -101,7 +101,7 @@ var kloak = function kloak(target, delegate, stamp, name) {
 		throw new Error("invalid name");
 	}
 
-	if (kein(delegate, "method")) {
+	if (kein("method", delegate)) {
 		throw new Error("cannot cloak target delegate");
 	}
 
