@@ -1,6 +1,6 @@
 {
   "name": "kloak",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "Pretend delegated function.",
   "main": "kloak.js",
   "support": "kloak.support.js",
