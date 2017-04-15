@@ -74,7 +74,7 @@ const transpher = require( "transpher" );
 const truly = require( "truly" );
 const wichevr = require( "wichevr" );
 
-const DEFAULT_TARGET_NAME = "procedure";
+const DEFAULT_METHOD_NAME = "procedure";
 const CLOAKED = Symbol( "cloaked" );
 
 const kloak = function kloak( method, delegate, stamp, name ){
@@ -97,8 +97,8 @@ const kloak = function kloak( method, delegate, stamp, name ){
 		throw new Error( "invalid delegate function" );
 	}
 
-	if( falzy( stamp ) || !protype( stamp, STRING ) ){
-		throw new Error( "invalid stamp string" );
+	if( falzy( stamp ) || !protype( stamp, STRING + SYMBOL ) ){
+		throw new Error( "invalid stamp" );
 	}
 
 	if( truly( name ) && !protype( name, STRING ) ){
@@ -107,7 +107,7 @@ const kloak = function kloak( method, delegate, stamp, name ){
 
 	/*;
 		@note:
-			All stamps must be global symbols.
+			All stamps must be global symbols if passed as string.
 		@end-note
 	*/
 	if( !protype( stamp, SYMBOL ) ){
@@ -128,7 +128,7 @@ const kloak = function kloak( method, delegate, stamp, name ){
 
 	transpher( method, delegate );
 
-	ate( "name", wichevr( name, method.name, DEFAULT_TARGET_NAME ), delegate );
+	ate( "name", wichevr( name, method.name, DEFAULT_METHOD_NAME ), delegate );
 
 	impel( "method", method, delegate );
 
