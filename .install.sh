@@ -1,13 +1,14 @@
 yarn add \
 babel-runtime \
 ate \
-cobralize \
+eqe \
 falzy \
 harden \
-kein \
+impel \
 protype \
 transpher \
 truly \
+wichevr \
 --save && \
 yarn add \
 babel-cli \
@@ -19,12 +20,13 @@ webpack \
 --dev && \
 bower install \
 ate \
-cobralize \
+eqe \
 falzy \
 harden \
-kein \
+impel \
 protype \
 transpher \
 truly \
+wichevr \
 --save \
 --force-latest

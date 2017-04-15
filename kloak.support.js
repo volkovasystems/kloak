@@ -53,31 +53,35 @@
               	@include:
               		{
               			"ate": "ate",
-              			"cobralize": "cobralize",
+              			"eqe": "eqe",
               			"falzy": "falzy",
               			"harden": "harden",
-              			"kein": "kein",
               			"protype": "protype",
               			"transpher": "transpher",
-              			"truly": "truly"
+              			"truly": "truly",
+              			"wichevr": "wichevr"
               		}
               	@end-include
-              */
+              */var _for = require("babel-runtime/core-js/symbol/for");var _for2 = _interopRequireDefault(_for);var _symbol = require("babel-runtime/core-js/symbol");var _symbol2 = _interopRequireDefault(_symbol);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 var ate = require("ate");
-var cobralize = require("cobralize");
+var eqe = require("eqe");
 var falzy = require("falzy");
 var harden = require("harden");
-var kein = require("kein");
+var impel = require("impel");
 var protype = require("protype");
 var transpher = require("transpher");
 var truly = require("truly");
+var wichevr = require("wichevr");
 
-var kloak = function kloak(target, delegate, stamp, name) {
+var DEFAULT_TARGET_NAME = "procedure";
+var CLOAKED = (0, _symbol2.default)("cloaked");
+
+var kloak = function kloak(method, delegate, stamp, name) {
 	/*;
                                                            	@meta-configuration:
                                                            		{
-                                                           			"target:required": "function",
+                                                           			"method:required": "function",
                                                            			"delegate:required": "function",
                                                            			"stamp:required": "string",
                                                            			"name": "string"
@@ -85,33 +89,51 @@ var kloak = function kloak(target, delegate, stamp, name) {
                                                            	@end-meta-configuration
                                                            */
 
-	if (!protype(target, FUNCTION)) {
-		throw new Error("invalid target function");
+	if (falzy(method) || !protype(method, FUNCTION)) {
+		throw new Error("invalid method function");
 	}
 
-	if (!protype(delegate, FUNCTION)) {
+	if (falzy(delegate) || !protype(delegate, FUNCTION)) {
 		throw new Error("invalid delegate function");
 	}
 
-	if (!protype(stamp, STRING) || falzy(stamp)) {
-		throw new Error("invalid stamp");
+	if (falzy(stamp) || !protype(stamp, STRING)) {
+		throw new Error("invalid stamp string");
 	}
 
 	if (truly(name) && !protype(name, STRING)) {
-		throw new Error("invalid name");
+		throw new Error("invalid name string");
 	}
 
-	if (kein("method", delegate)) {
-		throw new Error("cannot cloak target delegate");
+	/*;
+   	@note:
+   		All stamps must be global symbols.
+   	@end-note
+   */
+	if (!protype(stamp, SYMBOL)) {
+		stamp = (0, _for2.default)(stamp);
 	}
 
-	transpher(target, delegate);
+	/*;
+   	@note:
+   		Check if delegate is already a cloak and currently cloaking a method.
+   	@end-note
+   */
+	if (delegate[CLOAKED] === CLOAKED &&
+	delegate[stamp] === stamp &&
+	eqe(method, delegate.method))
+	{
+		return delegate;
+	}
 
-	ate("name", target.name || name, delegate);
+	transpher(method, delegate);
 
-	harden("method", target, delegate);
+	ate("name", wichevr(name, method.name, DEFAULT_TARGET_NAME), delegate);
 
-	harden(cobralize(stamp), stamp, delegate);
+	impel("method", method, delegate);
+
+	harden(stamp, stamp, delegate);
+	harden(CLOAKED, CLOAKED, delegate);
 
 	return delegate;
 };

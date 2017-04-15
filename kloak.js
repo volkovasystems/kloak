@@ -53,31 +53,35 @@
 	@include:
 		{
 			"ate": "ate",
-			"cobralize": "cobralize",
+			"eqe": "eqe",
 			"falzy": "falzy",
 			"harden": "harden",
-			"kein": "kein",
 			"protype": "protype",
 			"transpher": "transpher",
-			"truly": "truly"
+			"truly": "truly",
+			"wichevr": "wichevr"
 		}
 	@end-include
 */
 
 const ate = require( "ate" );
-const cobralize = require( "cobralize" );
+const eqe = require( "eqe" );
 const falzy = require( "falzy" );
 const harden = require( "harden" );
-const kein = require( "kein" );
+const impel = require( "impel" );
 const protype = require( "protype" );
 const transpher = require( "transpher" );
 const truly = require( "truly" );
+const wichevr = require( "wichevr" );
 
-const kloak = function kloak( target, delegate, stamp, name ){
+const DEFAULT_TARGET_NAME = "procedure";
+const CLOAKED = Symbol( "cloaked" );
+
+const kloak = function kloak( method, delegate, stamp, name ){
 	/*;
 		@meta-configuration:
 			{
-				"target:required": "function",
+				"method:required": "function",
 				"delegate:required": "function",
 				"stamp:required": "string",
 				"name": "string"
@@ -85,33 +89,51 @@ const kloak = function kloak( target, delegate, stamp, name ){
 		@end-meta-configuration
 	*/
 
-	if( !protype( target, FUNCTION ) ){
-		throw new Error( "invalid target function" );
+	if( falzy( method ) || !protype( method, FUNCTION ) ){
+		throw new Error( "invalid method function" );
 	}
 
-	if( !protype( delegate, FUNCTION ) ){
+	if( falzy( delegate ) || !protype( delegate, FUNCTION ) ){
 		throw new Error( "invalid delegate function" );
 	}
 
-	if( !protype( stamp, STRING ) || falzy( stamp ) ){
-		throw new Error( "invalid stamp" );
+	if( falzy( stamp ) || !protype( stamp, STRING ) ){
+		throw new Error( "invalid stamp string" );
 	}
 
 	if( truly( name ) && !protype( name, STRING ) ){
-		throw new Error( "invalid name" );
+		throw new Error( "invalid name string" );
 	}
 
-	if( kein( "method", delegate ) ){
-		throw new Error( "cannot cloak target delegate" );
+	/*;
+		@note:
+			All stamps must be global symbols.
+		@end-note
+	*/
+	if( !protype( stamp, SYMBOL ) ){
+		stamp = Symbol.for( stamp );
 	}
 
-	transpher( target, delegate );
+	/*;
+		@note:
+			Check if delegate is already a cloak and currently cloaking a method.
+		@end-note
+	*/
+	if( delegate[ CLOAKED ] === CLOAKED &&
+		delegate[ stamp ] === stamp &&
+		eqe( method, delegate.method ) )
+	{
+		return delegate;
+	}
 
-	ate( "name", target.name || name, delegate );
+	transpher( method, delegate );
 
-	harden( "method", target, delegate );
+	ate( "name", wichevr( name, method.name, DEFAULT_TARGET_NAME ), delegate );
 
-	harden( cobralize( stamp ), stamp, delegate );
+	impel( "method", method, delegate );
+
+	harden( stamp, stamp, delegate );
+	harden( CLOAKED, CLOAKED, delegate );
 
 	return delegate;
 };
