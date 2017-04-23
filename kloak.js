@@ -48,6 +48,8 @@
 		Pretend delegated function.
 
 		This will not cloak delegate with method linked to it.
+
+		Note that, this will disregard conflicted properties.
 	@end-module-documentation
 
 	@include:
@@ -56,6 +58,7 @@
 			"eqe": "eqe",
 			"falzy": "falzy",
 			"harden": "harden",
+			"impel": "impel",
 			"protype": "protype",
 			"transpher": "transpher",
 			"truly": "truly",
@@ -126,7 +129,7 @@ const kloak = function kloak( method, delegate, stamp, name ){
 		return delegate;
 	}
 
-	transpher( method, delegate );
+	transpher( method, delegate, true );
 
 	ate( "name", wichevr( name, method.name, DEFAULT_METHOD_NAME ), delegate );
 
