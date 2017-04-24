@@ -48,17 +48,19 @@
 		Pretend delegated function.
 
 		This will not cloak delegate with method linked to it.
+		A method can be cloaked once.
 
 		Note that, this will disregard conflicted properties.
 	@end-module-documentation
 
 	@include:
 		{
-			"ate": "ate",
-			"eqe": "eqe",
+			"burne": "burne",
+			"cagd": "cagd",
 			"falzy": "falzy",
-			"harden": "harden",
+			"fname": "fname",
 			"impel": "impel",
+			"mrkd": "mrkd",
 			"protype": "protype",
 			"transpher": "transpher",
 			"truly": "truly",
@@ -67,18 +69,19 @@
 	@end-include
 */
 
-const ate = require( "ate" );
-const eqe = require( "eqe" );
+const burne = require( "burne" );
+const cagd = require( "cagd" );
 const falzy = require( "falzy" );
-const harden = require( "harden" );
+const fname = require( "fname" );
 const impel = require( "impel" );
+const mrkd = require( "mrkd" );
 const protype = require( "protype" );
 const transpher = require( "transpher" );
 const truly = require( "truly" );
 const wichevr = require( "wichevr" );
 
-const DEFAULT_METHOD_NAME = "procedure";
 const CLOAKED = Symbol( "cloaked" );
+const DEFAULT_METHOD_NAME = "procedure";
 
 const kloak = function kloak( method, delegate, stamp, name ){
 	/*;
@@ -110,33 +113,22 @@ const kloak = function kloak( method, delegate, stamp, name ){
 
 	/*;
 		@note:
-			All stamps must be global symbols if passed as string.
+			Check if delegate is cloaked.
 		@end-note
 	*/
-	if( !protype( stamp, SYMBOL ) ){
-		stamp = Symbol.for( stamp );
-	}
-
-	/*;
-		@note:
-			Check if delegate is already a cloak and currently cloaking a method.
-		@end-note
-	*/
-	if( delegate[ CLOAKED ] === CLOAKED &&
-		delegate[ stamp ] === stamp &&
-		eqe( method, delegate.method ) )
-	{
+	if( mrkd( CLOAKED, delegate, true ) ){
 		return delegate;
 	}
 
 	transpher( method, delegate, true );
 
-	ate( "name", wichevr( name, method.name, DEFAULT_METHOD_NAME ), delegate );
+	cagd( "name", wichevr( name, fname( method ), DEFAULT_METHOD_NAME ), delegate );
 
 	impel( "method", method, delegate );
 
-	harden( stamp, stamp, delegate );
-	harden( CLOAKED, CLOAKED, delegate );
+	burne( stamp, delegate );
+
+	burne( CLOAKED, delegate );
 
 	return delegate;
 };

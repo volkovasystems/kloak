@@ -1,10 +1,11 @@
 yarn add \
 babel-runtime \
-ate \
-eqe \
+burne \
+cagd \
 falzy \
-harden \
+fname \
 impel \
+mrkd \
 protype \
 transpher \
 truly \
@@ -19,11 +20,12 @@ source-map-loader \
 webpack \
 --dev && \
 bower install \
-ate \
-eqe \
+burne \
+cagd \
 falzy \
-harden \
+fname \
 impel \
+mrkd \
 protype \
 transpher \
 truly \

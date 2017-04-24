@@ -48,37 +48,40 @@
               		Pretend delegated function.
               
               		This will not cloak delegate with method linked to it.
+              		A method can be cloaked once.
               
               		Note that, this will disregard conflicted properties.
               	@end-module-documentation
               
               	@include:
               		{
-              			"ate": "ate",
-              			"eqe": "eqe",
+              			"burne": "burne",
+              			"cagd": "cagd",
               			"falzy": "falzy",
-              			"harden": "harden",
+              			"fname": "fname",
               			"impel": "impel",
+              			"mrkd": "mrkd",
               			"protype": "protype",
               			"transpher": "transpher",
               			"truly": "truly",
               			"wichevr": "wichevr"
               		}
               	@end-include
-              */var _for = require("babel-runtime/core-js/symbol/for");var _for2 = _interopRequireDefault(_for);var _symbol = require("babel-runtime/core-js/symbol");var _symbol2 = _interopRequireDefault(_symbol);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+              */var _symbol = require("babel-runtime/core-js/symbol");var _symbol2 = _interopRequireDefault(_symbol);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
-var ate = require("ate");
-var eqe = require("eqe");
+var burne = require("burne");
+var cagd = require("cagd");
 var falzy = require("falzy");
-var harden = require("harden");
+var fname = require("fname");
 var impel = require("impel");
+var mrkd = require("mrkd");
 var protype = require("protype");
 var transpher = require("transpher");
 var truly = require("truly");
 var wichevr = require("wichevr");
 
-var DEFAULT_METHOD_NAME = "procedure";
 var CLOAKED = (0, _symbol2.default)("cloaked");
+var DEFAULT_METHOD_NAME = "procedure";
 
 var kloak = function kloak(method, delegate, stamp, name) {
 	/*;
@@ -110,33 +113,22 @@ var kloak = function kloak(method, delegate, stamp, name) {
 
 	/*;
    	@note:
-   		All stamps must be global symbols if passed as string.
+   		Check if delegate is cloaked.
    	@end-note
    */
-	if (!protype(stamp, SYMBOL)) {
-		stamp = (0, _for2.default)(stamp);
-	}
-
-	/*;
-   	@note:
-   		Check if delegate is already a cloak and currently cloaking a method.
-   	@end-note
-   */
-	if (delegate[CLOAKED] === CLOAKED &&
-	delegate[stamp] === stamp &&
-	eqe(method, delegate.method))
-	{
+	if (mrkd(CLOAKED, delegate, true)) {
 		return delegate;
 	}
 
 	transpher(method, delegate, true);
 
-	ate("name", wichevr(name, method.name, DEFAULT_METHOD_NAME), delegate);
+	cagd("name", wichevr(name, fname(method), DEFAULT_METHOD_NAME), delegate);
 
 	impel("method", method, delegate);
 
-	harden(stamp, stamp, delegate);
-	harden(CLOAKED, CLOAKED, delegate);
+	burne(stamp, delegate);
+
+	burne(CLOAKED, delegate);
 
 	return delegate;
 };
