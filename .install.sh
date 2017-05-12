@@ -1,14 +1,17 @@
 yarn add \
 babel-runtime \
+budge \
 burne \
 cagd \
+depher \
 falzy \
 fname \
 impel \
 mrkd \
 protype \
 transpher \
-truly \
+transym \
+truopt \
 wichevr \
 --save && \
 yarn add \
@@ -20,15 +23,18 @@ source-map-loader \
 webpack \
 --dev && \
 bower install \
+budge \
 burne \
 cagd \
+depher \
 falzy \
 fname \
 impel \
 mrkd \
 protype \
 transpher \
-truly \
+transym \
+truopt \
 wichevr \
 --save \
 --force-latest

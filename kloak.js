@@ -55,42 +55,49 @@
 
 	@include:
 		{
+			"budge": "budge",
 			"burne": "burne",
 			"cagd": "cagd",
+			"depher": "depher",
 			"falzy": "falzy",
 			"fname": "fname",
 			"impel": "impel",
 			"mrkd": "mrkd",
 			"protype": "protype",
 			"transpher": "transpher",
-			"truly": "truly",
+			"transym": "transym",
+			"truopt": "truopt",
 			"wichevr": "wichevr"
 		}
 	@end-include
 */
 
+const budge = require( "budge" );
 const burne = require( "burne" );
 const cagd = require( "cagd" );
+const depher = require( "depher" );
 const falzy = require( "falzy" );
 const fname = require( "fname" );
 const impel = require( "impel" );
 const mrkd = require( "mrkd" );
 const protype = require( "protype" );
 const transpher = require( "transpher" );
-const truly = require( "truly" );
+const transym = require( "transym" );
+const truopt = require( "truopt" );
 const wichevr = require( "wichevr" );
 
 const CLOAKED = Symbol( "cloaked" );
 const DEFAULT_METHOD_NAME = "procedure";
 
-const kloak = function kloak( method, delegate, stamp, name ){
+const kloak = function kloak( method, delegate, stamp, name, option ){
 	/*;
 		@meta-configuration:
 			{
 				"method:required": "function",
 				"delegate:required": "function",
 				"stamp:required": "string",
-				"name": "string"
+				"name": "string",
+				"option": "object"
 			}
 		@end-meta-configuration
 	*/
@@ -107,9 +114,10 @@ const kloak = function kloak( method, delegate, stamp, name ){
 		throw new Error( "invalid stamp" );
 	}
 
-	if( truly( name ) && !protype( name, STRING ) ){
-		throw new Error( "invalid name string" );
-	}
+	let parameter = budge( arguments, 3 );
+	name = depher( parameter, STRING, wichevr( fname( method ), DEFAULT_METHOD_NAME ) );
+
+	option = truopt( depher( parameter, OBJECT, { "property": true, "symbol": true } ) );
 
 	/*;
 		@note:
@@ -120,9 +128,15 @@ const kloak = function kloak( method, delegate, stamp, name ){
 		return delegate;
 	}
 
-	transpher( method, delegate, true );
+	if( option.property ){
+		transpher( method, delegate, true );
+	}
 
-	cagd( "name", wichevr( name, fname( method ), DEFAULT_METHOD_NAME ), delegate );
+	if( option.symbol ){
+		transym( method, delegate );
+	}
+
+	cagd( "name", name, delegate );
 
 	impel( "method", method, delegate );
 

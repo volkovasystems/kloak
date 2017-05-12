@@ -1,10 +1,8 @@
 
+const assert = require( "assert" );
 const kloak = require( "./kloak.js" );
-const util = require( "util" );
 
-let test = kloak( function hello( ){ }, function yeah( ){ }, "test", "sample" );
-console.log( util.inspect( test, { "showHidden": true } ) );
+let hey = function hey( ){ };
+assert.equal( kloak( function hello( ){ }, hey, "yeah" ).name, "hello", "should have name 'hello'" );
 
-console.log( test.toString( ) );
-
-console.log( kloak( function nice( ){ }, test, "test" ) );
+console.log( "ok" );

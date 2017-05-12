@@ -55,45 +55,52 @@
               
               	@include:
               		{
+              			"budge": "budge",
               			"burne": "burne",
               			"cagd": "cagd",
+              			"depher": "depher",
               			"falzy": "falzy",
               			"fname": "fname",
               			"impel": "impel",
               			"mrkd": "mrkd",
               			"protype": "protype",
               			"transpher": "transpher",
-              			"truly": "truly",
+              			"transym": "transym",
+              			"truopt": "truopt",
               			"wichevr": "wichevr"
               		}
               	@end-include
               */var _symbol = require("babel-runtime/core-js/symbol");var _symbol2 = _interopRequireDefault(_symbol);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
+var budge = require("budge");
 var burne = require("burne");
 var cagd = require("cagd");
+var depher = require("depher");
 var falzy = require("falzy");
 var fname = require("fname");
 var impel = require("impel");
 var mrkd = require("mrkd");
 var protype = require("protype");
 var transpher = require("transpher");
-var truly = require("truly");
+var transym = require("transym");
+var truopt = require("truopt");
 var wichevr = require("wichevr");
 
 var CLOAKED = (0, _symbol2.default)("cloaked");
 var DEFAULT_METHOD_NAME = "procedure";
 
-var kloak = function kloak(method, delegate, stamp, name) {
+var kloak = function kloak(method, delegate, stamp, name, option) {
 	/*;
-                                                           	@meta-configuration:
-                                                           		{
-                                                           			"method:required": "function",
-                                                           			"delegate:required": "function",
-                                                           			"stamp:required": "string",
-                                                           			"name": "string"
-                                                           		}
-                                                           	@end-meta-configuration
-                                                           */
+                                                                   	@meta-configuration:
+                                                                   		{
+                                                                   			"method:required": "function",
+                                                                   			"delegate:required": "function",
+                                                                   			"stamp:required": "string",
+                                                                   			"name": "string",
+                                                                   			"option": "object"
+                                                                   		}
+                                                                   	@end-meta-configuration
+                                                                   */
 
 	if (falzy(method) || !protype(method, FUNCTION)) {
 		throw new Error("invalid method function");
@@ -107,22 +114,29 @@ var kloak = function kloak(method, delegate, stamp, name) {
 		throw new Error("invalid stamp");
 	}
 
-	if (truly(name) && !protype(name, STRING)) {
-		throw new Error("invalid name string");
-	}
+	var parameter = budge(arguments, 3);
+	name = depher(parameter, STRING, wichevr(fname(method), DEFAULT_METHOD_NAME));
+
+	option = truopt(depher(parameter, OBJECT, { "property": true, "symbol": true }));
 
 	/*;
-   	@note:
-   		Check if delegate is cloaked.
-   	@end-note
-   */
+                                                                                   	@note:
+                                                                                   		Check if delegate is cloaked.
+                                                                                   	@end-note
+                                                                                   */
 	if (mrkd(CLOAKED, delegate, true)) {
 		return delegate;
 	}
 
-	transpher(method, delegate, true);
+	if (option.property) {
+		transpher(method, delegate, true);
+	}
 
-	cagd("name", wichevr(name, fname(method), DEFAULT_METHOD_NAME), delegate);
+	if (option.symbol) {
+		transym(method, delegate);
+	}
+
+	cagd("name", name, delegate);
 
 	impel("method", method, delegate);
 
