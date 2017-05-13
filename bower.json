@@ -1,6 +1,6 @@
 {
   "name": "kloak",
-  "version": "0.23.0",
+  "version": "0.24.0",
   "description": "Pretend delegated function.",
   "main": "kloak.deploy.js",
   "support": "kloak.support.js",
@@ -33,8 +33,8 @@
     "impel": "^0.14.0",
     "mrkd": "^0.4.0",
     "protype": "^0.21.0",
-    "transpher": "^0.25.0",
-    "transym": "^0.0.0",
+    "transpher": "^0.26.0",
+    "transym": "^0.1.0",
     "truopt": "^0.0.0",
     "wichevr": "^0.9.0"
   }
