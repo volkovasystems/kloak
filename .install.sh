@@ -1,6 +1,5 @@
 yarn add \
 babel-runtime \
-budge \
 burne \
 cagd \
 depher \
@@ -9,6 +8,7 @@ fname \
 impel \
 mrkd \
 protype \
+shft \
 transpher \
 transym \
 truopt \
@@ -23,7 +23,6 @@ source-map-loader \
 webpack \
 --dev && \
 bower install \
-budge \
 burne \
 cagd \
 depher \
@@ -32,6 +31,7 @@ fname \
 impel \
 mrkd \
 protype \
+shft \
 transpher \
 transym \
 truopt \

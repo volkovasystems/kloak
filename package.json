@@ -1,6 +1,6 @@
 {
   "name": "kloak",
-  "version": "0.24.0",
+  "version": "0.25.0",
   "description": "Pretend delegated function.",
   "main": "kloak.js",
   "support": "kloak.support.js",
@@ -31,15 +31,15 @@
   "homepage": "https://github.com/volkovasystems/kloak#readme",
   "dependencies": {
     "babel-runtime": "^6.23.0",
-    "budge": "^0.28.0",
     "burne": "^0.1.0",
     "cagd": "^0.1.0",
-    "depher": "^0.32.0",
+    "depher": "^0.33.0",
     "falzy": "^0.19.0",
     "fname": "^0.8.0",
     "impel": "^0.14.0",
-    "mrkd": "^0.4.0",
+    "mrkd": "^0.5.0",
     "protype": "^0.21.0",
+    "shft": "^0.1.0",
     "transpher": "^0.26.0",
     "transym": "^0.1.0",
     "truopt": "^0.0.0",
@@ -51,6 +51,6 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-latest": "^6.24.1",
     "source-map-loader": "^0.2.1",
-    "webpack": "^2.5.1"
+    "webpack": "^2.6.1"
   }
 }
