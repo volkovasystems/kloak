@@ -55,7 +55,6 @@
 
 	@include:
 		{
-			"budge": "budge",
 			"burne": "burne",
 			"cagd": "cagd",
 			"depher": "depher",
@@ -64,6 +63,7 @@
 			"impel": "impel",
 			"mrkd": "mrkd",
 			"protype": "protype",
+			"shft": "shft",
 			"transpher": "transpher",
 			"transym": "transym",
 			"truopt": "truopt",
@@ -72,7 +72,6 @@
 	@end-include
 */
 
-const budge = require( "budge" );
 const burne = require( "burne" );
 const cagd = require( "cagd" );
 const depher = require( "depher" );
@@ -81,6 +80,7 @@ const fname = require( "fname" );
 const impel = require( "impel" );
 const mrkd = require( "mrkd" );
 const protype = require( "protype" );
+const shft = require( "shft" );
 const transpher = require( "transpher" );
 const transym = require( "transym" );
 const truopt = require( "truopt" );
@@ -114,7 +114,7 @@ const kloak = function kloak( method, delegate, stamp, name, option ){
 		throw new Error( "invalid stamp" );
 	}
 
-	let parameter = budge( arguments, 3 );
+	let parameter = shft( arguments, 3 );
 	name = depher( parameter, STRING, wichevr( fname( method ), DEFAULT_METHOD_NAME ) );
 
 	option = truopt( depher( parameter, OBJECT, { "property": true, "symbol": true } ) );
