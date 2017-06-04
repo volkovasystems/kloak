@@ -55,7 +55,6 @@
               
               	@include:
               		{
-              			"budge": "budge",
               			"burne": "burne",
               			"cagd": "cagd",
               			"depher": "depher",
@@ -64,6 +63,7 @@
               			"impel": "impel",
               			"mrkd": "mrkd",
               			"protype": "protype",
+              			"shft": "shft",
               			"transpher": "transpher",
               			"transym": "transym",
               			"truopt": "truopt",
@@ -72,7 +72,6 @@
               	@end-include
               */var _symbol = require("babel-runtime/core-js/symbol");var _symbol2 = _interopRequireDefault(_symbol);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
-var budge = require("budge");
 var burne = require("burne");
 var cagd = require("cagd");
 var depher = require("depher");
@@ -81,6 +80,7 @@ var fname = require("fname");
 var impel = require("impel");
 var mrkd = require("mrkd");
 var protype = require("protype");
+var shft = require("shft");
 var transpher = require("transpher");
 var transym = require("transym");
 var truopt = require("truopt");
@@ -114,7 +114,7 @@ var kloak = function kloak(method, delegate, stamp, name, option) {
 		throw new Error("invalid stamp");
 	}
 
-	var parameter = budge(arguments, 3);
+	var parameter = shft(arguments, 3);
 	name = depher(parameter, STRING, wichevr(fname(method), DEFAULT_METHOD_NAME));
 
 	option = truopt(depher(parameter, OBJECT, { "property": true, "symbol": true }));
