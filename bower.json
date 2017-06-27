@@ -1,6 +1,6 @@
 {
   "name": "kloak",
-  "version": "0.27.0",
+  "version": "0.28.0",
   "description": "Pretend delegated function.",
   "main": "kloak.deploy.js",
   "support": "kloak.support.js",
@@ -25,7 +25,7 @@
     "tests"
   ],
   "dependencies": {
-    "burne": "^0.3.0",
+    "burne": "^0.4.0",
     "cagd": "^0.2.0",
     "depher": "^0.35.0",
     "falzy": "^0.20.0",
@@ -34,8 +34,8 @@
     "mrkd": "^0.8.0",
     "protype": "^0.22.0",
     "shft": "^0.2.0",
-    "transpher": "^0.27.0",
-    "transym": "^0.2.0",
+    "transpher": "^0.28.0",
+    "transym": "^0.3.0",
     "truopt": "^0.1.0",
     "wichevr": "^0.10.0"
   }
