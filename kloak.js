@@ -103,11 +103,11 @@ const kloak = function kloak( method, delegate, stamp, name, option ){
 		@end-meta-configuration
 	*/
 
-	if( falzy( method ) || !protype( method, FUNCTION ) ){
+	if( falzy( method ) || typeof method != "function" ){
 		throw new Error( "invalid method function" );
 	}
 
-	if( falzy( delegate ) || !protype( delegate, FUNCTION ) ){
+	if( falzy( delegate ) || typeof delegate != "function" ){
 		throw new Error( "invalid delegate function" );
 	}
 
