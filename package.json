@@ -1,57 +1,60 @@
 {
-  "name": "kloak",
-  "version": "0.29.0",
-  "description": "Pretend delegated function.",
-  "main": "kloak.js",
-  "support": "kloak.support.js",
-  "deploy": "kloak.deploy.js",
-  "browser": "kloak.deploy.js",
-  "scripts": {
-    "build": "babel kloak.js --out-file kloak.support.js --source-maps && webpack --progress --display-modules",
-    "test": "mocha kloak-test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/volkovasystems/kloak.git"
-  },
-  "keywords": [
-    "pretend",
-    "delegated",
-    "function",
-    "kloak"
-  ],
-  "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
-  "contributors": [
-    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
-    "Vinse Vinalon <vinsevinalon@gmail.com>"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/volkovasystems/kloak/issues"
-  },
-  "homepage": "https://github.com/volkovasystems/kloak#readme",
-  "dependencies": {
-    "babel-runtime": "^6.23.0",
-    "burne": "^0.5.0",
-    "cagd": "^0.3.0",
-    "depher": "^0.36.0",
-    "falzy": "^0.20.0",
-    "fname": "^0.11.0",
-    "impel": "^0.17.0",
-    "mrkd": "^0.9.0",
-    "protype": "^0.22.0",
-    "shft": "^0.4.0",
-    "transpher": "^0.29.0",
-    "transym": "^0.4.0",
-    "truopt": "^0.2.0",
-    "wichevr": "^0.13.0"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.25.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-latest": "^6.24.1",
-    "source-map-loader": "^0.2.1",
-    "webpack": "^3.2.0"
-  }
+	"name": "kloak",
+	"version": "0.30.0",
+	"description": "Pretend delegated function.",
+	"main": "kloak.js",
+	"support": "kloak.support.js",
+	"deploy": "kloak.deploy.js",
+	"browser": "kloak.deploy.js",
+	"scripts": {
+		"pristine": "rsetmod clean && flxc execute ./.install.sh",
+		"clear": "rsetmod clean --clear",
+		"build": "babel kloak.js --out-file kloak.support.js --source-maps && webpack --progress --display-modules",
+		"pretest": "npm run clear && npm run build",
+		"test": "node kloak-test.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/volkovasystems/kloak.git"
+	},
+	"keywords": [
+		"pretend",
+		"delegated",
+		"function",
+		"kloak"
+	],
+	"author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+	"contributors": [
+		"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+		"Vinse Vinalon <vinsevinalon@gmail.com>"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/volkovasystems/kloak/issues"
+	},
+	"homepage": "https://github.com/volkovasystems/kloak#readme",
+	"dependencies": {
+		"babel-runtime": "^6.25.0",
+		"burne": "^0.6.0",
+		"cagd": "^0.4.0",
+		"depher": "^0.38.0",
+		"falzy": "^0.23.0",
+		"fname": "^0.13.0",
+		"impel": "^0.18.0",
+		"mrkd": "^0.11.0",
+		"protype": "^0.24.0",
+		"shft": "^0.5.0",
+		"transpher": "^0.30.0",
+		"transym": "^0.5.0",
+		"truopt": "^0.3.0",
+		"wichevr": "^0.14.0"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.24.1",
+		"babel-core": "^6.25.0",
+		"babel-plugin-transform-runtime": "^6.23.0",
+		"babel-preset-latest": "^6.24.1",
+		"source-map-loader": "^0.2.1",
+		"webpack": "^3.5.3"
+	}
 }
