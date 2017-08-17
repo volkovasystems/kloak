@@ -70,6 +70,25 @@ const path = require( "path" );
 
 describe( "kloak", ( ) => {
 
+	describe( "`kloak( function hello( ){ }, function hey( ){ }, 'yeah' ).name`", ( ) => {
+		it( "should be equal to 'hello'", ( ) => {
+
+			let hey = function hey( ){ };
+			assert.equal( kloak( function hello( ){ }, hey, "yeah" ).name, "hello" );
+
+		} );
+	} );
+
+	describe( "`kloak( function f( ){ return 'hello' }, function h( ){ return 'world' }, 'sample' )`", ( ) => {
+		it( "should not cause the function named 'f' and function named 'h' to be equal", ( ) => {
+
+			let f = function f( ){ return "hello" };
+			let h = kloak( f, function h( ){ return "world" }, "sample" );
+			assert.equal( f( ) == h( ), false );
+
+		} );
+	} );
+
 } );
 
 //: @end-server
@@ -78,6 +97,26 @@ describe( "kloak", ( ) => {
 //: @client:
 
 describe( "kloak", ( ) => {
+
+	describe( "`kloak( function hello( ){ }, function hey( ){ }, 'yeah' ).name`", ( ) => {
+		it( "should be equal to 'hello'", ( ) => {
+
+			let hey = function hey( ){ };
+			assert.equal( kloak( function hello( ){ }, hey, "yeah" ).name, "hello" );
+
+		} );
+	} );
+
+	describe( "`kloak( function f( ){ return 'hello' }, function h( ){ return 'world' }, 'sample' )`", ( ) => {
+		it( "should not cause the function named 'f' and function named 'h' to be equal", ( ) => {
+
+			let f = function f( ){ return "hello" };
+			let h = kloak( f, function h( ){ return "world" }, "sample" );
+			assert.equal( f( ) == h( ), false );
+
+		} );
+	} );
+
 } );
 
 //: @end-client
@@ -86,6 +125,49 @@ describe( "kloak", ( ) => {
 //: @bridge:
 
 describe( "kloak", ( ) => {
+
+	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
+
+	describe( "`kloak( function hello( ){ }, function hey( ){ }, 'yeah' ).name`", ( ) => {
+		it( "should be equal to 'hello'", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+
+					let hey = function hey( ){ };
+					return kloak( function hello( ){ }, hey, "yeah" ).name;
+
+				}
+
+			).value;
+
+			assert.equal( result, "hello" );
+
+		} );
+	} );
+
+	describe( "`kloak( function f( ){ return 'hello' }, function h( ){ return 'world' }, 'sample' )`", ( ) => {
+		it( "should not cause the function named 'f' and function named 'h' to be equal", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+
+					let f = function f( ){ return "hello" };
+					let h = kloak( f, function h( ){ return "world" }, "sample" );
+
+					return f( ) == h( );
+
+				}
+
+			).value;
+
+			assert.equal( result, false );
+
+		} );
+	} );
+
 } );
 
 //: @end-bridge
