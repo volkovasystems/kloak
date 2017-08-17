@@ -66,6 +66,25 @@ const kloak = require( "./kloak.js" );
 
 describe( "kloak", ( ) => {
 
+	describe( "`kloak( function hello( ){ }, function hey( ){ }, 'yeah' ).name`", ( ) => {
+		it( "should be equal to 'hello'", ( ) => {
+
+			let hey = function hey( ){ };
+			assert.equal( kloak( function hello( ){ }, hey, "yeah" ).name, "hello" );
+
+		} );
+	} );
+
+	describe( "`kloak( function f( ){ return 'hello' }, function h( ){ return 'world' }, 'sample' )`", ( ) => {
+		it( "should not cause the function named 'f' and function named 'h' to be equal", ( ) => {
+
+			let f = function f( ){ return "hello" };
+			let h = kloak( f, function h( ){ return "world" }, "sample" );
+			assert.equal( f( ) == h( ), false );
+
+		} );
+	} );
+
 } );
 
 //: @end-server
