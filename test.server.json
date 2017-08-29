@@ -5,22 +5,22 @@
 		"passes": 2,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-08-17T04:37:51.336Z",
-		"end": "2017-08-17T04:37:51.429Z",
-		"duration": 93
+		"start": "2017-08-29T03:51:18.518Z",
+		"end": "2017-08-29T03:51:18.601Z",
+		"duration": 83
 	},
 	"tests": [
 		{
 			"title": "should be equal to 'hello'",
 			"fullTitle": "kloak `kloak( function hello( ){ }, function hey( ){ }, 'yeah' ).name` should be equal to 'hello'",
-			"duration": 54,
+			"duration": 50,
 			"currentRetry": 0,
 			"err": {}
 		},
 		{
 			"title": "should not cause the function named 'f' and function named 'h' to be equal",
 			"fullTitle": "kloak `kloak( function f( ){ return 'hello' }, function h( ){ return 'world' }, 'sample' )` should not cause the function named 'f' and function named 'h' to be equal",
-			"duration": 33,
+			"duration": 29,
 			"currentRetry": 0,
 			"err": {}
 		}
@@ -31,14 +31,14 @@
 		{
 			"title": "should be equal to 'hello'",
 			"fullTitle": "kloak `kloak( function hello( ){ }, function hey( ){ }, 'yeah' ).name` should be equal to 'hello'",
-			"duration": 54,
+			"duration": 50,
 			"currentRetry": 0,
 			"err": {}
 		},
 		{
 			"title": "should not cause the function named 'f' and function named 'h' to be equal",
 			"fullTitle": "kloak `kloak( function f( ){ return 'hello' }, function h( ){ return 'world' }, 'sample' )` should not cause the function named 'f' and function named 'h' to be equal",
-			"duration": 33,
+			"duration": 29,
 			"currentRetry": 0,
 			"err": {}
 		}

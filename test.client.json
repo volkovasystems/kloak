@@ -4,8 +4,8 @@
 		"failed": 0,
 		"skipped": 0
 	},
-	"start": "2017-08-17T04:37:52.740Z",
-	"end": "2017-08-17T04:38:25.748Z",
+	"start": "2017-08-29T03:51:19.788Z",
+	"end": "2017-08-29T03:51:54.478Z",
 	"capabilities": {
 		"browserName": "chrome",
 		"chromeOptions": {
@@ -28,52 +28,52 @@
 		{
 			"name": "kloak",
 			"duration": 0,
-			"start": "2017-08-17T04:38:25.358Z",
+			"start": "2017-08-29T03:51:54.109Z",
 			"tests": [],
 			"hooks": []
 		},
 		{
 			"name": "kloak",
-			"duration": 209,
-			"start": "2017-08-17T04:38:25.359Z",
-			"end": "2017-08-17T04:38:25.568Z",
+			"duration": 191,
+			"start": "2017-08-29T03:51:54.110Z",
+			"end": "2017-08-29T03:51:54.301Z",
 			"tests": [],
 			"hooks": [
 				{
-					"start": "2017-08-17T04:38:25.361Z",
-					"end": "2017-08-17T04:38:25.361Z",
+					"start": "2017-08-29T03:51:54.112Z",
+					"end": "2017-08-29T03:51:54.112Z",
 					"duration": 0,
 					"title": "\"before each\" hook",
 					"associatedSuite": "kloak",
 					"associatedTest": "should be equal to 'hello'"
 				},
 				{
-					"start": "2017-08-17T04:38:25.506Z",
-					"end": "2017-08-17T04:38:25.507Z",
-					"duration": 1,
+					"start": "2017-08-29T03:51:54.242Z",
+					"end": "2017-08-29T03:51:54.242Z",
+					"duration": 0,
 					"title": "\"after each\" hook",
 					"associatedSuite": "kloak",
 					"associatedTest": "should be equal to 'hello'"
 				},
 				{
-					"start": "2017-08-17T04:38:25.508Z",
-					"end": "2017-08-17T04:38:25.509Z",
-					"duration": 1,
+					"start": "2017-08-29T03:51:54.243Z",
+					"end": "2017-08-29T03:51:54.243Z",
+					"duration": 0,
 					"title": "\"before each\" hook",
 					"associatedSuite": "kloak",
 					"associatedTest": "should not cause the function named 'f' and function named 'h' to be equal"
 				},
 				{
-					"start": "2017-08-17T04:38:25.568Z",
-					"end": "2017-08-17T04:38:25.568Z",
-					"duration": 0,
+					"start": "2017-08-29T03:51:54.300Z",
+					"end": "2017-08-29T03:51:54.301Z",
+					"duration": 1,
 					"title": "\"after each\" hook",
 					"associatedSuite": "kloak",
 					"associatedTest": "should not cause the function named 'f' and function named 'h' to be equal"
 				},
 				{
-					"start": "2017-08-17T04:38:25.568Z",
-					"end": "2017-08-17T04:38:25.568Z",
+					"start": "2017-08-29T03:51:54.301Z",
+					"end": "2017-08-29T03:51:54.301Z",
 					"duration": 0,
 					"title": "\"after all\" hook",
 					"associatedSuite": "kloak"
@@ -82,15 +82,15 @@
 		},
 		{
 			"name": "`kloak( function hello( ){ }, function hey( ){ }, 'yeah' ).name`",
-			"duration": 148,
-			"start": "2017-08-17T04:38:25.360Z",
-			"end": "2017-08-17T04:38:25.508Z",
+			"duration": 133,
+			"start": "2017-08-29T03:51:54.110Z",
+			"end": "2017-08-29T03:51:54.243Z",
 			"tests": [
 				{
 					"name": "should be equal to 'hello'",
-					"start": "2017-08-17T04:38:25.360Z",
-					"end": "2017-08-17T04:38:25.506Z",
-					"duration": 146,
+					"start": "2017-08-29T03:51:54.111Z",
+					"end": "2017-08-29T03:51:54.242Z",
+					"duration": 131,
 					"state": "pass"
 				}
 			],
@@ -98,15 +98,15 @@
 		},
 		{
 			"name": "`kloak( function f( ){ return 'hello' }, function h( ){ return 'world' }, 'sample' )`",
-			"duration": 60,
-			"start": "2017-08-17T04:38:25.508Z",
-			"end": "2017-08-17T04:38:25.568Z",
+			"duration": 58,
+			"start": "2017-08-29T03:51:54.243Z",
+			"end": "2017-08-29T03:51:54.301Z",
 			"tests": [
 				{
 					"name": "should not cause the function named 'f' and function named 'h' to be equal",
-					"start": "2017-08-17T04:38:25.508Z",
-					"end": "2017-08-17T04:38:25.567Z",
-					"duration": 59,
+					"start": "2017-08-29T03:51:54.243Z",
+					"end": "2017-08-29T03:51:54.300Z",
+					"duration": 57,
 					"state": "pass"
 				}
 			],
